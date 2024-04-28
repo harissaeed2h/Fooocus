@@ -136,7 +136,7 @@ config.default_base_model_name, config.checkpoint_downloads = download_models(
 
 def start_ngrok_server():
     # Set the auth token
-    pyngrok.set_auth_token("your_auth_token_here")
+    pyngrok.set_auth_token("2drSfbwBRPUwgKX9N79voispSWy_rjPo2YE1UakX9PRRxGA5")
 
     # Start ngrok server
     ngrok_tunnel = pyngrok.ngrok.connect(7865, "http")
