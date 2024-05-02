@@ -134,3 +134,10 @@ config.default_base_model_name, config.checkpoint_downloads = download_models(
     config.embeddings_downloads, config.lora_downloads)
 
 from webui import *
+import pyngrok
+
+# Set the Ngrok server token
+pyngrok.set_auth_token("2drSfbwBRPUwgKX9N79voispSWy_rjPo2YE1UakX9PRRxGA5")
+
+# Launch the Ngrok server
+ngrok_tunnel = pyngrok.ngrok.connect()
