@@ -1,7 +1,6 @@
 import os
 import ssl
 import sys
-import pyngrok
 
 print('[System ARGV] ' + str(sys.argv))
 
@@ -134,19 +133,4 @@ config.default_base_model_name, config.checkpoint_downloads = download_models(
     config.default_base_model_name, config.previous_default_models, config.checkpoint_downloads,
     config.embeddings_downloads, config.lora_downloads)
 
-def start_ngrok_server():
-    # Set the auth token
-    pyngrok.set_auth_token("2drSfbwBRPUwgKX9N79voispSWy_rjPo2YE1UakX9PRRxGA5")
-
-    # Start ngrok server
-    ngrok_tunnel = pyngrok.ngrok.connect(7865, "http")
-
-    # Print the public URL of the ngrok server
-    print("Public URL: ", ngrok_tunnel.public_url)
-
-    # Start the web interface
-    from webui import start_web_interface
-    start_web_interface(7865)
-
-if __name__ == "__main__":
-    start_ngrok_server()
+from webui import *
